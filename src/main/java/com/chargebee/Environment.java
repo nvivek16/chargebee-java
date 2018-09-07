@@ -39,6 +39,8 @@ public class Environment {
     private static Environment defaultEnv; // singleton
     
     private RequestInterceptor reqInterceptor;
+
+    private AsyncRequestInterceptor asyncReqInterceptor;
     
     public Environment(String siteName, String apiKey) {
         this(siteName, apiKey, null);
@@ -60,9 +62,17 @@ public class Environment {
     public static void reqInterceptor(RequestInterceptor reqInterceptor) {
         defaultConfig().reqInterceptor = reqInterceptor;
     }
+
+    public static void asyncReqInterceptor(AsyncRequestInterceptor reqInterceptor) {
+        defaultConfig().asyncReqInterceptor = reqInterceptor;
+    }
     
     public RequestInterceptor reqInterceptor() {
         return reqInterceptor;
+    }
+
+    public AsyncRequestInterceptor asyncReqInterceptor() {
+        return asyncReqInterceptor;
     }
 
     public static Environment defaultConfig() {

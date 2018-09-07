@@ -13,5 +13,4 @@ import com.chargebee.internal.RequestBase;
 public interface RequestInterceptor {
 
     public ApiResponse handleRequest(RequestWrap<? extends RequestBase> requestWrap) throws Exception;
-
 }
